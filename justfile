@@ -87,7 +87,7 @@ check: check-ffmpeg check-ffglitch
 # Download and install ffglitch (macOS Apple Silicon)
 install-ffglitch:
     curl -LO https://ffglitch.org/pub/bin/macos-aarch64/ffglitch-0.10.2-macos-aarch64.zip
-    unzip ffglitch-0.10.2-macos-aarch64.zip
-    sudo cp ffglitch-0.10.2-macos-aarch64/bin/* /usr/local/bin/
+    unzip -o ffglitch-0.10.2-macos-aarch64.zip
+    sudo cp ffglitch-0.10.2-macos-aarch64/ffedit ffglitch-0.10.2-macos-aarch64/ffgac ffglitch-0.10.2-macos-aarch64/fflive /usr/local/bin/
     rm -rf ffglitch-0.10.2-macos-aarch64.zip ffglitch-0.10.2-macos-aarch64/
     @echo "FFglitch installed successfully"

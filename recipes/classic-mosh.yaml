@@ -1,0 +1,20 @@
+name: classic-mosh
+description: Classic datamosh with I-frame removal and P-frame bloom (no FFglitch required)
+
+input:
+  format: auto
+
+output:
+  format: mp4
+  codec: libx264
+  crf: 18
+
+pipeline:
+  - effect: iframe
+    start: 30
+    end: 500
+    keep_first: true
+
+  - effect: pframe
+    dup: 3
+    start: 50
