@@ -1,0 +1,25 @@
+name: dreamy-melt
+description: Soft melting transitions with gentle motion blur
+
+input:
+  format: auto
+
+output:
+  format: mp4
+  codec: libx264
+  crf: 18
+
+pipeline:
+  - effect: iframe
+    start: 30
+    end: 90
+    keep_first: true
+
+  - effect: vector
+    transform: blur
+    params:
+      kernel: 5
+
+  - effect: pframe
+    dup: 3
+    start: 40

@@ -1,0 +1,25 @@
+name: wave-distort
+description: Wavy, liquid-like motion distortion
+
+input:
+  format: auto
+
+output:
+  format: mp4
+  codec: libx264
+  crf: 18
+
+pipeline:
+  - effect: vector
+    transform: sine-wave
+    params:
+      freq: 0.05
+      amp: 8.0
+      axis: x
+
+  - effect: vector
+    transform: cosine-wave
+    params:
+      freq: 0.03
+      amp: 5.0
+      axis: y

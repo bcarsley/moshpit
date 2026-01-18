@@ -1,0 +1,25 @@
+name: chaos-jitter
+description: High-energy random motion chaos
+
+input:
+  format: auto
+
+output:
+  format: mp4
+  codec: libx264
+  crf: 18
+
+pipeline:
+  - effect: iframe
+    start: 10
+    keep_first: true
+
+  - effect: vector
+    transform: jitter
+    params:
+      strength: 2.0
+
+  - effect: vector
+    transform: amplify
+    params:
+      factor: 1.5

@@ -1,0 +1,20 @@
+name: bloom-trails
+description: Motion trails with accumulated bloom effect
+
+input:
+  format: auto
+
+output:
+  format: mp4
+  codec: libx264
+  crf: 18
+
+pipeline:
+  - effect: vector
+    transform: accumulate
+    params:
+      decay: 0.85
+
+  - effect: pframe
+    dup: 5
+    start: 20
